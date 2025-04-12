@@ -1,4 +1,3 @@
-import React from 'react'
 import PostForm from '../../components/forms/PostForm'
 import { useParams } from 'react-router-dom'
 import { useGetPostById } from '../../lib/react-query/queriesAndMutations';

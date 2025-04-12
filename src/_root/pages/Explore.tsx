@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from 'react'
 import { Input } from '../../components/ui/input'
-import { Models } from 'appwrite';
 import GridPostsList from '../../components/shared/GridPostsList';
 import SearchResults from '../../components/shared/SearchResults';
 import { useGetPosts, useSearchPosts } from '../../lib/react-query/queriesAndMutations';

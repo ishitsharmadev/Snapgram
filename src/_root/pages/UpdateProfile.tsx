@@ -1,12 +1,6 @@
-import React, { use } from 'react'
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
-import { z } from "zod"
-import { editProfileValidation } from "../../lib/validation"
-import { useNavigate, useParams } from "react-router-dom"
-import { useGetUserById, useUpdateUser } from '../../lib/react-query/queriesAndMutations'
+import { useParams } from "react-router-dom"
+import { useGetUserById} from '../../lib/react-query/queriesAndMutations'
 import Loader from '../../components/shared/Loader'
-import { toast } from 'sonner'
 import UpdateProfileForm from '../../components/forms/UpdateProfileForm'
 
 function UpdateProfile() {

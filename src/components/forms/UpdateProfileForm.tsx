@@ -1,4 +1,3 @@
-import React from 'react'
 import ProfileImgUploader from '../../components/shared/ProfileImgUploader'
 import { Textarea } from '../../components/ui/textarea'
 import { Button } from "@/components/ui/button"
