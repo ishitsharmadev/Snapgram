@@ -1,5 +1,4 @@
 import { Models } from 'appwrite'
-import React from 'react'
 import { useUserContext } from '../../context/AuthContext'
 import { Link } from 'react-router-dom';
 
@@ -14,7 +13,6 @@ function GridPosts({
     showUser = false, 
     className = ''
 }: GridPostListProps) {
-    const {user} = useUserContext();
    
     return (
         <div className='w-full h-full'>

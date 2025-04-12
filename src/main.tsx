@@ -1,7 +1,6 @@
-import React from "react";
 import {createRoot} from "react-dom/client";
 import App from "./App";
-import { createBrowserRouter, Route, createRoutesFromElements, RouterProvider, BrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Route, createRoutesFromElements, RouterProvider } from "react-router-dom";
 import SignInForm from "./_auth/forms/SignInForm";
 import SignUpForm from "./_auth/forms/SignUpForm";
 import AuthLayout from "./_auth/AuthLayout";
