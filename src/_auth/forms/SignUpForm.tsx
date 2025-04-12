@@ -2,7 +2,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { z } from "zod";
 import { useForm } from "react-hook-form"
 import { Button } from "@/components/ui/button"
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage, } from "@/components/ui/form"
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage, } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { SignupValidation } from "../../lib/validation"
 import Loader from "../../components/shared/Loader";
