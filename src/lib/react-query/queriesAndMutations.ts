@@ -7,7 +7,6 @@ import {
 import { createPost, createUserAccount, deletePost, deleteSavePost, getCurrentUser, getInfinitePosts, getInfiniteUsers, getPostById, getRecentPosts, getSavedPosts, getUserById, getUsers, likePost, savePost, searchPosts, signInAccount, signOutAccount, updatePost, updateUser } from "../appwrite/api";
 import { INewPost, INewUser, IUpdatePost, IUpdateUser } from "../../types";
 import { QUERY_KEYS } from "./queryKeys";
-import { Models } from "appwrite";
 
 export const useCreateUserAccountMutation=()=>{// Level in between frontend and appwrite for easy time in Feching, queryinng and chaching the data
     return useMutation({
