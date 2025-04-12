@@ -2,7 +2,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { z } from "zod";
 import { useForm } from "react-hook-form"
 import { Button } from "@/components/ui/button"
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage, } from "@/components/ui/form"
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage, } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { SignInValidation } from "../../lib/validation"
 import Loader from "../../components/shared/Loader";
@@ -15,7 +15,7 @@ import { useUserContext } from "../../context/AuthContext";
 
 function SignInForm() {
     const {mutateAsync:signInAccount, isPending:isSigningIn} = useSignInAccountMutation();
-    const {checkAuthUser, isLoading:isUserLoading, setIsAuthenticated} = useUserContext();
+    const {checkAuthUser, setIsAuthenticated} = useUserContext();
     const navigate = useNavigate();
     // 1. Define your form.
     const form = useForm<z.infer<typeof SignInValidation>>({

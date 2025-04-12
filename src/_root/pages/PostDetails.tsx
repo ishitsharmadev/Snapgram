@@ -11,7 +11,7 @@ function PostDetails() {
   const {id} = useParams();
   const {data:post, isPending} = useGetPostById(id || '');
   const navigate = useNavigate();
-  const {mutateAsync:deletePost, isPending:isDeleting} = useDeletePost();
+  const {mutateAsync:deletePost} = useDeletePost();
   const {user} = useUserContext();
   const handleDeletePost = ()=>{
     let deleteAPost;

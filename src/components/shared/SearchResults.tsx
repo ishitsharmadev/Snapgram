@@ -5,7 +5,7 @@ import GridPostsList from './GridPostsList'
 
 type SearcResultProps = {
   isSearchFetching:boolean,
-  searchedPosts: Models.Document[]
+  searchedPosts?: Models.Document[]
 }
 
 function SearchResults({

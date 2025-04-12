@@ -5,6 +5,7 @@ import { useGetPosts, useSearchPosts } from '../../lib/react-query/queriesAndMut
 import useDebounce from '../../hooks/useDebounce';
 import Loader from '../../components/shared/Loader';
 import { useInView } from "react-intersection-observer";
+import { useEffect, useState } from 'react';
 
 function Explore() {
 
