@@ -15,8 +15,8 @@ import { useUserContext } from "../../context/AuthContext";
 
 function SignUpForm() {
     const {mutateAsync:createUserAccount/**mutation fn that we created[createUserAccount]*/, isPending:isCreatingUser} = useCreateUserAccountMutation();
-    const {mutateAsync:signInAccount, isPending:isSigningIn} = useSignInAccountMutation();
-    const {checkAuthUser, isLoading:isUserLoading, setIsAuthenticated} = useUserContext();
+    const {mutateAsync:signInAccount} = useSignInAccountMutation();
+    const {checkAuthUser, setIsAuthenticated} = useUserContext();
     const navigate = useNavigate();
     // 1. Define your form.
     const form = useForm<z.infer<typeof SignupValidation>>({

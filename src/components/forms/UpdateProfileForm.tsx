@@ -10,6 +10,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useUpdateUser } from '../../lib/react-query/queriesAndMutations'
 import { editProfileValidation } from '../../lib/validation'
 import { toast } from 'sonner'
+import { z } from 'zod'
 
 function UpdateProfileForm({user}:{user?:Models.Document}) {
     const {mutateAsync:updateUser, isPending:isUpdatingUser} = useUpdateUser();
