@@ -1,4 +1,4 @@
-import React, {useCallback, useState} from 'react'
+import {useCallback, useState} from 'react'
 import {FileWithPath, useDropzone} from 'react-dropzone'/**react-dropzone is a react component hepls you to provide a functionality lke drag and drop */
 import { Button } from '../ui/button';
 
@@ -11,12 +11,10 @@ function FileUploader({
     feildChange,
     mediaUrl
 }:FileUploaderProps) {
-    const [file, setFile] = useState<File[]>([]);
     const [fileUrl, setFileUrl] = useState(mediaUrl || '');
 
     const onDrop = useCallback((acceptedFiles:FileWithPath[]) => {
         // Do something with the files
-        setFile(acceptedFiles);
         feildChange(acceptedFiles);
         setFileUrl(URL.createObjectURL(acceptedFiles[0]));
 
