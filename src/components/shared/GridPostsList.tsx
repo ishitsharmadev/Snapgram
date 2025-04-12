@@ -1,5 +1,4 @@
 import { Models } from 'appwrite'
-import React from 'react'
 import { useUserContext } from '../../context/AuthContext'
 import { Link } from 'react-router-dom';
 import PostStats from './PostStats';
@@ -16,7 +15,7 @@ function GridPostsList({posts, showUser=true, showStats=true}:GridPostListProps)
   return (
     <div className=''>
       <ul className='grid-container'>
-        {posts.map((post:Models.Document, i:number)=>(
+        {posts?.map((post:Models.Document, i:number)=>(
             <li key={i} className='relative min-w-80 h-80'>
             <Link to={`/posts/${post.$id}`} className='grid-post_link'>
               <img src={post.imageUrl} 

@@ -16,7 +16,7 @@ function ProfileImgUploader({feildChange, imageUrl}:ProfileImgUploaderProps) {
         setFileUrl(imageUrl);
         feildChange(acceptedFiles);
       }, [])
-      const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
+      const {getRootProps, getInputProps} = useDropzone({onDrop})
     
       return (
         <div {...getRootProps()}>
