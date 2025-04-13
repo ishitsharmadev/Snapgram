@@ -54,8 +54,12 @@ export async function saveUserToDB(user:{
 export async function signInAccount(user:{email:string, password:string}) {
     try{
         
+        try{
         const currentSession = await account.getSession('current');
         if(currentSession)await account.deleteSession(currentSession.$id);
+        }catch(err){
+            console.log(err);   
+        }// the internal try catch block is required because if error is thrown then signup will always happen its gaurenteed
 
         const session = await account.createEmailPasswordSession(user.email, user.password);
         return session;
