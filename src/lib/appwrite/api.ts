@@ -310,7 +310,7 @@ export async function deletePost(postId:string, imageId:string) {
     }
 }
 
-export async function getInfinitePosts({pageParam}:{pageParam:number}) {
+export async function getInfinitePosts({pageParam}:{pageParam: string}) {
     const quries:any[] = [Query.orderDesc('$updatedAt'), Query.limit(10)];
     if(pageParam){
         quries.push(Query.cursorAfter(pageParam.toString()));//If we are at page 1 and want to skip "pageParams" pages we can use this to fetch next 10
@@ -357,7 +357,7 @@ export const getUsers = async ()=>{
     }
 }
 
-export async function getInfiniteUsers({pageParam}: {pageParam:number}) {
+export async function getInfiniteUsers({pageParam}: {pageParam:string}) {
     const query = [Query.limit(20)];
     if(pageParam){
         query.push(Query.cursorAfter(pageParam?.toString()));
