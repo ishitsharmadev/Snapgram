@@ -12,19 +12,20 @@ function GridPosts({
     showUser = false, 
     className = ''
 }: GridPostListProps) {
+   console.log(posts);
    
     return (
         <div className='w-full h-full'>
             <ul className={`grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 ${className}`}>
                 {posts.map((post: Models.Document) => (
                     <li 
-                        key={post.$id} 
+                        key={post?.$id} 
                         className='relative group overflow-hidden rounded-xl'
                     >
-                        <Link to={`/posts/${post.$id}`} className='block relative'>
+                        <Link to={`/posts/${post?.$id}`} className='block relative'>
                             <div className='relative pt-[100%]'>
                                 <img 
-                                    src={post.imageUrl || '/assets/icons/profile-placeholder.svg'}
+                                    src={post?.imageUrl || '/assets/icons/profile-placeholder.svg'}
                                     className='absolute top-0 left-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-110'
                                     alt="post"
                                 />

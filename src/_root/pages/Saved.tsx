@@ -10,7 +10,8 @@ function Saved() {
   
   if(!user?.save) return <Loader/>
 
-  const posts = user.save.map((saved:Models.Document)=>saved.post)
+  let posts = user.save.map((saved:Models.Document)=>saved.post);
+  posts = posts.filter((post:Models.Document)=>post!=null);
 
   return (
     <div className='container mx-auto px-4 py-8'>
