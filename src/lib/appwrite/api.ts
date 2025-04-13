@@ -54,13 +54,8 @@ export async function saveUserToDB(user:{
 export async function signInAccount(user:{email:string, password:string}) {
     try{
         
-        try {
-            const currentSession = await account.getSession('current');
-            if(currentSession)await account.deleteSession(currentSession.$id);
-        } catch (sessionError) {
-            console.log("No active session found, proceeding with login");
-        }
-
+        const currentSession = await account.getSession('current');
+        if(currentSession)await account.deleteSession(currentSession.$id);
 
         const session = await account.createEmailPasswordSession(user.email, user.password);
         return session;
@@ -362,10 +357,10 @@ export const getUsers = async ()=>{
     }
 }
 
-export async function getInfiniteUsers({pageParam}:{pageParam:number}) {
+export async function getInfiniteUsers({pageParam}: {pageParam:number}) {
     const query = [Query.limit(20)];
     if(pageParam){
-        query.push(Query.cursorAfter(pageParam.toString()));
+        query.push(Query.cursorAfter(pageParam?.toString()));
     }
     try{
         const users = await databases.listDocuments(
@@ -377,6 +372,7 @@ export async function getInfiniteUsers({pageParam}:{pageParam:number}) {
         return users;
     }catch(err){
         console.log(err);
+        throw err;
     }
 }
 
@@ -426,9 +422,8 @@ export async function updateUser(user:IUpdateUser) {
             if(!imageUrl){
                 await deleteFile(uploadFile.$id);
                 throw Error;
-                return;
             }
-            let newUrl = new URL(imageUrl);
+            const newUrl = new URL(imageUrl);
             image = {
                 imageUrl:newUrl,
                 imageId:uploadFile.$id
